@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <!-- ====GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- ====FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <!-- ===LINK MAIN CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body id="myBody">
+    <section id="side_bar" class="side_bar close">
+        <button id="side_barBTN"><i class="fa-solid fa-angle-right"></i></button>
+        <div class="side_bar__header">
+            <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/06/Logo-Thanh-Pho-Da-Nang.png"
+                alt="logo">
+            <div class="titleHeader">
+                <p>Ngô Minh Đức</p>
+                <span>CyberSoft - Đà Nẵng</span>
+            </div>
+        </div>
+        <div class="side_bar__detail">
+            <div class="sideBar__item" id="sidebarItem">
+                <a href="#"><i class="fa-solid fa-graduation-cap"></i><span>Quản lý sinh viên</span></a>
+            </div>
+
+            <div class="sideBar__item" id="itemTienDien">
+                <a href="#"><i class="fa-solid fa-bolt-lightning"></i><span>Tính tiền điện</span></a>
+            </div>
+
+            <div class="sideBar__item" id="itemThue">
+                <a href="#"><i class="fa-solid fa-money-bill-transfer"></i><span>Tính thuế thu nhập cá nhân</span></a>
+            </div>
+
+            <div class="sideBar__item" id="itemTienCap">
+                <a href="#"><i class="fa-solid fa-house-signal "></i><span>Tính tiền cáp</span></a>
+            </div>
+
+        </div>
+    </section>
+    <div class="container student__manager hidden" id="student__manager">
+        <form class="form">
+            <h3>QUẢN LÝ TUYỂN SINH</h3>
+            <label for="" diemHD>Hãy nhập điểm hội đồng:</label>
+            <input type="number" id="diemHD">
+            <label for="diem1">Hãy nhập điểm môn thứ nhất:</label>
+            <input type="number" id="diem1">
+            <label for="diem2">Hãy nhập điểm môn thứ hai:</label>
+            <input type="number" id="diem2">
+            <label for="diem3">Hãy nhập điểm môn thứ ba:</label>
+            <input type="number" id="diem3">
+            <div class="radioKhuVuc">
+                <p>Hãy chọn khu vực của bạn:</p>
+                <div class="radioInside">
+                    <input type="radio" id="khuA" name="area" value="2">
+                    <label for="khuA">Khu vực A (2đ)</label>
+
+                </div>
+                <div class="radioInside">
+                    <input type="radio" id="khuB" name="area" value="1">
+                    <label for="khuB">Khu vực B (1đ)</label>
+                </div>
+                <div class="radioInside">
+                    <input type="radio" id="khuC" name="area" value="0.5">
+                    <label for="khuC">Khu vực C (0.5đ)</label>
+                </div>
+                <div class="radioInside">
+                    <input type="radio" id="khuX" name="area" value="0">
+                    <label for="khuX">Không có khu vực (0đ)</label>
+                </div>
+            </div>
+            <label for="doiTuong">Hãy chọn đối tượng: <p class="pTool">i <span class="toolTip"> đối tượng 1: 2.5đ <br>
+                        đối tượng 2: 1.5đ <br> đối tượng 3: 1đ </span> </p> </label>
+            <input type="number" id="doiTuong" min="1" max="3">
+            <button id="btnResult" type="button">Tra điểm ngay!!</button>
+        </form>
+        <div class="ketQuaBox">
+            <h3>KẾT QUẢ</h3>
+            <h4 id="soDiem">Điểm</h4>
+            <h4 id="dauRot">...</h4>
+        </div>
+    </div>
+    <section class="container electricBill hidden" id="electricBill">
+        <form class="form">
+            <h3>TÍNH TIỀN ĐIỆN</h3>
+            <label for="hoTenDien">Hãy nhập họ và tên:</label>
+            <input type="text" id="hoTenDien">
+            <label for="soKw">Hãy nhập số Kw:</label>
+            <input type="number" id="soKw">
+            <div class="hintBillCount">
+                <ul>
+                    <li>50Kw đầu: <span>500đ/Kw</span> </li>
+                    <li>50Kw kế: <span>650đ/Kw</span> </li>
+                    <li>100Kw kế: <span>850đ/Kw</span> </li>
+                    <li>150Kw kế: <span>1.100đ/Kw</span> </li>
+                    <li>Còn lại: <span> 1.300đ/Kw</span></li>
+                </ul>
+            </div>
+            <button id="btnElectric" type="button">Tính tiền điện!</button>
+            <div class="ketQuaBox EB_box">
+                <h3>KẾT QUẢ</h3>
+                <h4 id="EBname">Họ và tên:</h4>
+                <h4 id="EBresult">Tiền điện:</h4>
+            </div>
+        </form>
+    </section>
+    <section class="container internetBill hidden" id="internetBill">
+        <form class="form">
+            <h3>TÍNH TIỀN CÁP</h3>
+            <h4>Hãy chọn nhóm khách hàng:</h4>
+            <div id="btnKH">
+                <button id="nhaDan" class="" type="button">Nhà dân</button>
+                <button id="doanhNghiep" type="button">Doanh Nghiệp</button>
+            </div>
+            <div class="inputGroup">
+                <label for="xuLyBill">Hãy nhập mã khách hàng:</label>
+                <input type="text" id="xuLyBill">
+                <label for="kenhCaoCap">Hãy nhập số kênh cao cấp:</label>
+                <input type="number" id="kenhCaoCap">
+                <label for="soKetNoi" id="soKetNoiLable" class="hidden">Hãy nhập số kết nối:</label>
+                <input type="number" class="hidden" id="soKetNoi">
+            </div>
+            <button id="btnInternetBill" type="button">Tính tiền cáp</button>
+            <div class="ketQuaBox internetBillKQ">
+                <h3>KẾT QUẢ</h3>
+                <h4 id="maKH">Mã khách hàng:</h4>
+                <h4 id="tienCap">Tiền cáp:</h4>
+            </div>
+        </form>
+    </section>
+    <section class="container tinhThue" id="tinhThue">
+        <form class="form">
+            <h3>TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
+            <label for="hoVaTen">Hãy nhập họ và tên:</label>
+            <input type="text" id="hoVaTen">
+            <label for="tongThuNhap">Hãy nhập tổng thu nhập:</label>
+            <input type="number" id="tongThuNhap">
+            <label for="soNguoiPhuThuoc" id="soKetNoiLable">Hãy nhập số người phụ thuộc:</label>
+            <input type="number" id="soNguoiPhuThuoc">
+            <button id="thueBTN">Tính ngay!</button>
+            <div class="ketQuaBox thueResult">
+                <h3>KẾT QUẢ</h3>
+                <h4 id="ten">Họ và tên:</h4>
+                <h4 id="tienThue1">Thuế thu nhập cá nhân: <span id="tienThue"></span> </h4>
+            </div>
+        </form>
+    </section>
+
+
+
+
+
+
+    <!-- ====MAIN JAVASCRIPT -->
+    <script src="./js/main.js"></script>
+    <script src="./js/ElectricBill.js"></script>
+    <script src="./js/sideBar.js"></script>
+    <script src="./js/internetBill.js"></script>
+    <script src="./js/thue.js"></script>
+</body>
+
+</html>

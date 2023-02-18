@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    font-family: 'Dosis', sans-serif;
+    background-color: aliceblue;
+    width: 100%;
+}
+#myBody .hidden{
+    display:none;
+}
+#myBody .electricBill,
+#myBody .internetBill,
+#myBody .tinhThue{
+    height: 100vh;
+}
+.ketQuaBox h4{
+    color: brown;
+    margin:10px 0;
+}
+/* ====SIDE BAR==== */
+.side_bar{
+    width: 250PX;
+    height: 100%;
+    position: fixed;
+    background-color: lightseagreen;
+    padding: 20px 10px 20px 10px;
+    transition: all .5s ease;
+}
+.side_bar__header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.side_bar__header img{
+    width: 50px;
+    height: 50px;
+}
+.titleHeader{
+    font-size: 18px;
+    font-weight: 600;
+}
+.side_bar__detail{
+    margin-top: 70px;
+}
+.sideBar__item a{
+    font-size: 15px;
+    text-decoration: none;
+    color: darkslateblue;
+    font-weight: 600;
+    text-align: center;
+    opacity: 1;
+    transition: all 1s ease;
+}
+.sideBar__item a i{
+    margin-right: 10px;
+    color: black;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height:50px;
+    border-radius: 50%;
+}
+.sideBar__item span{
+    display: inline-block;
+}
+.sideBar__item{
+    max-width: 230px;
+    height: 50px;
+    margin: 30px 0;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    position: relative;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+#side_barBTN{
+    position: absolute;
+    cursor: pointer;
+    bottom: 50%;
+    right: -25px;
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    font-size: 15px;
+    border: 1px solid lightseagreen;
+    background-color: lightseagreen;
+}
+#side_barBTN i{
+    transform: rotate(180deg);
+    transition: all .5s;
+}
+
+/* ====SIDEBAR CLOSE==== */
+.close{
+    width: 80px;
+    transition: all .5s ease;
+}
+.close .sideBar__item{
+    max-width: 50px;
+    transition: all .5s ease;
+}
+.close .sideBar__item span{
+    display: none;
+}
+.close .sideBar__item a{
+    font-size: 1px;
+}
+.close .sideBar__item a i{
+    font-size: 15px;
+}
+.close .sideBar__item{
+   width: 50px;
+}
+.close .close_icon{
+    margin: 30px auto;
+}
+.close .titleHeader{
+    display: none;
+}
+.close #side_barBTN i{
+    transform: rotate(360deg);
+}
+
+
+
+
+/* ====BODY */
+.container{
+    height: 100%;
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    column-gap: 20px;
+}
+.form
+,.radioKhuVuc{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.container h3
+,.ketQuaBox h3{
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+.form h5{
+    font-size: 25px;
+}
+.container input{
+    margin: 5px 0 20px;
+    height: 30px;
+}
+.radioInside{
+    display: flex;
+    align-items: center;
+}
+.container .radioInside input{
+    margin: 0 10px 0 0;
+}
+.container p,
+.container label {
+    font-size: 16px;
+    font-weight: 600;
+}
+.radioInside label{
+    font-weight: 500;
+}
+.form{
+    background-color:#ddd6f9;
+    height: 80%;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0,0.5);
+    width: 320px;
+    height: 683px;
+}
+#btnResult,
+#btnElectric,
+#btnInternetBill,
+#thueBTN{
+    height: 30px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: lightskyblue;
+    border: 0px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0,0.5);
+    transition: all .5s ease;
+    font-weight: 700;
+}
+#btnResult:hover,
+#btnElectric:hover,
+#btnInternetBill:hover,
+#thueBTN:hover{
+    background-color: lightcyan;
+}
+.ketQuaBox{
+    width: 320px;
+    height: 683px;
+    background-color: antiquewhite;
+    border-radius: 6px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0,0.5);
+    padding: 10px;
+    margin-top: 50px;
+}
+#soDiem,
+#dauRot{
+    font-size: 50px;
+    text-align: center;
+    margin: 120px 0;
+    transition: all .5s ease;
+    color: brown;
+}
+/* ===tool tip */
+.container .pTool{
+    text-align: center;
+    font-weight: 900;
+    color: aliceblue;
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+    width: 15px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: darkslategrey;
+    opacity: .8;
+}
+.container .toolTip{
+    text-align: left;
+    font-weight: normal;
+    position: absolute;
+    border-radius: 6px;
+    width: 110px;
+    background-color: lightslategrey;
+    font-size: 15px;
+    top: -82px ;
+    left: 40px;
+    opacity: 0;
+    transition: all .5s ease;
+    scale: 90%;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+}
+.pTool:hover .toolTip{
+    opacity: 1;
+    scale: 100%;
+}
+/* ===== ELECTRIC BILL==== */
+.hintBillCount {
+    padding: 20px 20px 20px 30px;
+    background-color: antiquewhite;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0px 6px 1px rgb(0 0 0 / 50%);
+    font-size: 20px;
+    height: 700px;
+}
+.hintBillCount span{
+    font-weight: 550;
+    margin-left: 20px;
+}
+.EB_box,
+.internetBillKQ,
+.thueResult{
+    margin-top: 30px;
+    width: 100%;
+}
+#btnElectric,
+#btnInternetBill,
+#thueBTN{
+    height: 110px;
+    border-radius: 6px;
+}
+/* ====INTERNET BILL ==== */
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+}
+#btnKH{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+#nhaDan,
+#doanhNghiep{
+    width: 100px;
+    height: 40px;
+    background-color: lavenderblush;
+    border: unset;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0px 0px 3px 3px rgb(0, 0, 0,0.5);
+    transition: all .3s ease;
+}
+#nhaDan:hover,
+#doanhNghiep:hover{
+    background-color: lightcyan;
+}
+#btnKH .click{
+    background-color : #8080808f;
+    box-shadow:inset rgb(0 0 0 / 50%) 0px 0px 8px 0px;
+    color: rgba(128, 128, 128, 0.6);
+}
+/* =====TINH THUE===== */
+#tongThuNhap{
+    height: 80px;
+    font-size: 20px;
+    background-color: #f080806e;
+    border: unset;
+    outline: none;
+    padding:10px;
+}
